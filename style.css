@@ -2,3 +2,31 @@ body{margin:0;font-family:sans-serif;background:#2d3b2d;color:#fff;text-align:ce
 header{background:#1e271e;padding:8px;position:sticky;top:0}
 video,canvas{width:100%;max-width:640px;height:auto;border-radius:8px;margin-top:8px}
 #splash{position:fixed;inset:0;background:#2d3b2d;display:flex;align-items:center;justify-content:center;z-index:10;color:#fff}
+/* keep the header visible under the iOS notch */
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: calc(8px + env(safe-area-inset-top)) 12px 8px 12px;
+}
+
+/* let controls wrap and scroll horizontally if they overflow */
+.controls{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;          /* prevent wrapping to an invisible line */
+  overflow-x: auto;           /* allow horizontal scroll instead */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;      /* hide scrollbar (Firefox) */
+}
+.controls::-webkit-scrollbar { display: none; } /* hide scrollbar (iOS/Safari) */
+
+/* shrink buttons/selects on small screens */
+@media (max-width: 480px){
+  .controls select{ max-width: 120px; }
+  .btn, .icon-btn{ padding:6px 10px; border-radius:10px; }
+  .brand{ font-size: 14px; }
+  /* shorten labels in the header only (won't affect settings drawer) */
+  .topbar label { font-size: 12px; }
+}
