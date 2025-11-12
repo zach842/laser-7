@@ -1,1 +1,9 @@
-{"name":"Laser Timer","short_name":"LaserTimer","start_url":".","display":"standalone","background_color":"#2d3b2d","theme_color":"#2d3b2d"}
+{
+  "name": "Laser Timer PWA",
+  "short_name": "LaserTimer",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2d3b2d",
+  "theme_color": "#2d3b2d",
+  "icons": []
+}
