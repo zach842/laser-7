@@ -1,0 +1,13 @@
+<!doctype html><html><head>
+<meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1,user-scalable=no'>
+<title>Laser Timer</title><link rel='manifest' href='manifest.json'>
+<link rel='stylesheet' href='style.css'><meta name='theme-color' content='#2d3b2d'>
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('service-worker.js'))}</script>
+</head><body>
+<div id=splash><div><h2>Laser Timer</h2><p>Tap START to enable camera & sound</p></div></div>
+<header><button id=startBtn>START</button><button id=calibBtn>Re-Calibrate</button><span id=status>Idle</span></header>
+<main><video id=video playsinline muted></video><canvas id=overlay></canvas></main>
+<audio id=beep src='assets/audio/countdown_beep.wav'></audio>
+<audio id=steel src='assets/audio/steel_hit.wav'></audio>
+<script async src='https://docs.opencv.org/4.x/opencv.js' onload='onCvReady()'></script>
+<script src='main.js'></script></body></html>
