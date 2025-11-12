@@ -30,3 +30,6 @@ video,canvas{width:100%;max-width:640px;height:auto;border-radius:8px;margin-top
   /* shorten labels in the header only (won't affect settings drawer) */
   .topbar label { font-size: 12px; }
 }
+
+.video-wrap{ position:relative; z-index: 0; }
+.topbar{ z-index: 20; }  /* already present, but make sure it's higher than the video */
